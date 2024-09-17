@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#36AE7C"
+    android:paddingHorizontal="16dp"
+    android:paddingVertical="32dp"
+    tools:context=".RecycleBinActivity">
+
+    <LinearLayout
+        android:id="@+id/backToMain"
+        android:background="@drawable/rectangle_solid_bg2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingVertical="8dp"
+        android:layout_marginHorizontal="32dp"
+        android:orientation="vertical"
+        android:layout_marginBottom="20dp">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:textAllCaps="true"
+            android:textStyle="bold"
+            android:textSize="26sp"
+            android:background="@android:color/transparent"
+            android:textColor="@color/black"
+            android:text="QQA Note App"/>
+
+        <TextView
+            android:text="Về màn hình chính"
+            android:textSize="18sp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@android:color/transparent"
+            android:textColor="@color/black"
+            android:gravity="center"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:orientation="vertical">
+        <TextView
+            android:text="Thùng rác"
+            android:gravity="center"
+            android:textStyle="bold"
+            android:textSize="24sp"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"/>
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_marginTop="8dp"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <Button
+                android:id="@+id/btn_set_delTime"
+                android:textColor="@color/white"
+                android:text="Mỗi ghi chú tự xóa sau:"
+                android:textAllCaps="false"
+                android:layout_marginEnd="18dp"
+                android:backgroundTint="#064635"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"/>
+            <FrameLayout
+                android:background="@drawable/radius_border"
+                android:backgroundTint="@color/white"
+                android:layout_weight="1"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent">
+                <Spinner
+                    android:id="@+id/spinner_timeDel"
+                    android:backgroundTint="@color/black"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"/>
+            </FrameLayout>
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <FrameLayout
+        android:layout_weight="1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <TextView
+            android:id="@+id/empty_bin"
+            android:text="Thùng rác trống"
+            android:textSize="18sp"
+            android:gravity="center"
+            android:layout_marginTop="32dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:layout_marginTop="8dp"
+            android:id="@+id/view_recycle_bin"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+    </FrameLayout>
+
+    <Button
+        android:id="@+id/btn_empty_bin"
+        android:text="Làm trống thùng rác"
+        android:backgroundTint="#064635"
+        android:layout_gravity="center"
+        android:layout_marginTop="8dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+</LinearLayout>
